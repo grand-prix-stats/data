@@ -7,13 +7,13 @@ This data repository is composed from multiple data sources, including third-par
 data collected from public domain, and data programmatically derived from the former.
 
 #### Features Included
-- Full data from Ergast DB ✅
-- Driver, Constructor and Circuit nationalities with emoji flags (🇺🇸,🇪🇸,🇬🇧,🇩🇪...) ✅
-- Constructor (and driver) colors season by season (derived from car livery) ✅
-- Driver and Constructor accruals (season and career totals) ✅
+- ✅ Full data from Ergast DB
+- ✅ Driver, Constructor and Circuit nationalities with **emoji** flags (🇺🇸,🇪🇸,🇬🇧,🇩🇪...)
+- ✅ Constructor (and driver) **colors** season by season (derived from car livery)
+- ✅ Driver and Constructor **accruals** (season and career totals)
   - Wins, podiums, top 10 finishes, points, pole positions, fastest laps, participations, races finishes, etc
-- Lap time deltas ✅
-- Laps led ✅
+- ✅ Lap time **deltas**
+- ✅ Laps led
 
 
 ## Sources
