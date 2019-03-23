@@ -16,17 +16,6 @@ data collected from public domain, and data programmatically derived from the fo
 - ✅ Laps led
 
 
-## Sources
-
-### Ergast F1 Database
-Website: http://ergast.com/mrd/db/
-
-This fantastic database provides most of the data
-available in this repository. A mirror of the Ergast F1 database is provided in this repository.
-
-[Ergast F1 DB Mirror Image (ergast-f1db.sql)](https://raw.githubusercontent.com/grand-prix-stats/data/master/mirror/ergast-f1db.sql)
-
-
 ## Download Grand Prix Stats Database
 You can directly download the latest `f1stats` database dump available. 
 
@@ -59,3 +48,14 @@ Dump `f1stats` database:
 ```
 $ make dump
 ```
+
+## Sources
+
+### Ergast F1 Database
+Website: http://ergast.com/mrd/db/
+
+This fantastic database provides most of the data
+available in this repository. A mirror of the Ergast 
+F1 database is provided in this repository.
+
+[Ergast F1 DB Mirror Image (ergast-f1db.sql)](https://raw.githubusercontent.com/grand-prix-stats/data/master/mirror/ergast-f1db.sql)
