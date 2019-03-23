@@ -1,5 +1,5 @@
 # Grand Prix Stats Data Repository
-Data backing Grand Prix Stats website and API.
+Data backing Grand Prix Stats [website](https://www.grandprixstats.org) and [API](https://www.grandprixstats.org/api).
 
 ## Data
 
