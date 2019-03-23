@@ -19,7 +19,7 @@ data collected from public domain, and data programmatically derived from the fo
 ## Download Grand Prix Stats Database
 You can directly download the latest `f1stats` database dump available. 
 
-[Download Grand Prix Stats Database (f1stats.sql)](https://raw.githubusercontent.com/grand-prix-stats/data/master/db/f1stats.sql)
+[Download Grand Prix Stats Database (f1stats.sql ~72MB)](https://raw.githubusercontent.com/grand-prix-stats/data/master/db/f1stats.sql)
 
 If you wish to run these scripts on your machine, 
 you can do it by cloning this repository:
@@ -58,4 +58,4 @@ This fantastic database provides most of the data
 available in this repository. A mirror of the Ergast 
 F1 database is provided in this repository.
 
-[Ergast F1 DB Mirror Image (ergast-f1db.sql)](https://raw.githubusercontent.com/grand-prix-stats/data/master/mirror/ergast-f1db.sql)
+[Ergast F1 DB Mirror Image (ergast-f1db.sql ~17MB)](https://raw.githubusercontent.com/grand-prix-stats/data/master/mirror/ergast-f1db.sql)
