@@ -13,7 +13,7 @@ Website: http://ergast.com/mrd/db/
 This fantastic database provides most of the data
 available in this repository. A mirror of the Ergast F1 database is provided in this repository.
 
-[Ergast F1 DB Mirror Image (ergast-f1db.sql)](/ergast-f1db.sql)
+[Ergast F1 DB Mirror Image (ergast-f1db.sql)](/mirror/ergast-f1db.sql)
 
 
 ## Cloning this Repository
