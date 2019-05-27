@@ -26,6 +26,10 @@ alter table gpsLapTimes add column lapLeaderMilliseconds int after lapLeader;
 alter table gpsLapTimes add column lapLeaderAccruedMilliseconds int after lapLeaderMilliseconds;
 alter table gpsLapTimes add column millisecondsBehindLeader int after lapLeaderAccruedMilliseconds;
 alter table gpsLapTimes add column accruedMillisecondsBehindLeader int after millisecondsBehindLeader;
+alter table gpsLapTimes add column averageLapMilliseconds int after accruedMillisecondsBehindLeader;
+alter table gpsLapTimes add column averageLapAccruedMilliseconds int after averageLapMilliseconds;
+alter table gpsLapTimes add column millisecondsFromAverageLap int after averageLapMilliseconds;
+alter table gpsLapTimes add column accruedMillisecondsFromAverageLap int after millisecondsFromAverageLap;
 -- alter table gpsLapTimes add column pitstopMilliseconds int after millisecondsBehindLeader;
 -- alter table gpsLapTimes add column pitstopNumber int after pitstopMilliseconds;
 
@@ -41,6 +45,15 @@ update gpsLapTimes l
    set l.lapLeaderAccruedMilliseconds = l2.accruedMilliseconds,
        l.millisecondsBehindLeader = l2.milliseconds - l.milliseconds,
        l.accruedMillisecondsBehindLeader = l2.accruedMilliseconds - l.accruedMilliseconds;
+
+update gpsLapTimes l
+  join gpsRaces r on r.raceId = l.raceId
+   set l.averageLapMilliseconds = r.raceMillisPerLap,
+       l.averageLapAccruedMilliseconds = r.raceMillisPerLap * l.lap;
+
+update gpsLapTimes l
+   set l.millisecondsFromAverageLap = l.averageLapMilliseconds - l.milliseconds,
+       l.accruedMillisecondsFromAverageLap = l.averageLapAccruedMilliseconds - l.accruedMilliseconds;
 
 -- update gpsLapTimes l
 --   join pitstops p on p.raceId = l.raceId and p.driverId = l.driverId and p.lap = l.lap
