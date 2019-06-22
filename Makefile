@@ -1,4 +1,6 @@
 
+all: download import dump
+
 download:
 	@echo "Downloading mirror of Ergast F1 DB..."
 	curl -O "http://ergast.com/downloads/f1db.sql.gz"
