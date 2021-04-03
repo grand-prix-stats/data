@@ -1,5 +1,5 @@
 
-all: download import dump
+all: download import migrate dump
 
 download:
 	@echo "Downloading mirror of Ergast F1 DB..."
@@ -13,8 +13,11 @@ resetdb:
 	mysql < sql/setupdb.sql
 
 import:
-	scripts/import.sh
+	echo "Importing Ergast F1 DB..."
+	mysql --default-character-set=utf8mb4 f1stats < mirror/ergast-f1db.sql
+
+migrate:
+	scripts/migrate.sh
 
 dump:
 	mysqldump -u root f1stats > db/f1stats.sql
-

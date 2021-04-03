@@ -11,7 +11,8 @@ alter table drivers add unique index driverRef (driverRef);
 alter table drivers add index (nationality);
 alter table driverStandings add index (driverId);
 alter table driverStandings add index (raceId);
-delete from driverStandings where driverStandingsId in (7118, 7149, 7180, 7211, 7243);
+-- delete duplicate standings
+delete from driverStandings where driverStandingsId in (70225);
 alter table driverStandings add unique index driverRace (driverId, raceId);
 
 -- Races
@@ -26,7 +27,6 @@ alter table results add index (constructorId);
 alter table results add index (raceId);
 alter table results add index driverRace (driverId, raceId);
 alter table results add index constructorRace (constructorId, raceId);
-update results set grid = 12 where resultId = 3666; -- Fix
 
 -- Lap Times
 alter table lapTimes add index (lap);
