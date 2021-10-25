@@ -136,14 +136,26 @@ update gpsSeasonConstructors set mainColor = "#B10713", secondaryColor = "#10101
 
 # 2020
 
-update gpsSeasonConstructors set mainColor = "#8D1028", secondaryColor = "#FFFFFF" where constructorRef = "alfa" and year = 2020;
-update gpsSeasonConstructors set mainColor = "#031D87", secondaryColor = "#FC181D" where constructorRef = "alphatauri" and year = 2020;
-update gpsSeasonConstructors set mainColor = "#E00D19", secondaryColor = "#000000" where constructorRef = "ferrari" and year = 2020;
-update gpsSeasonConstructors set mainColor = "#B49663", secondaryColor = "#000000" where constructorRef = "haas" and year = 2020;
+update gpsSeasonConstructors set mainColor = "#8C050B", secondaryColor = "#FFFFFF" where constructorRef = "alfa" and year = 2020;
+update gpsSeasonConstructors set mainColor = "#2B4460", secondaryColor = "#FFFFFF" where constructorRef = "alphatauri" and year = 2020;
+update gpsSeasonConstructors set mainColor = "#D50A16", secondaryColor = "#000000" where constructorRef = "ferrari" and year = 2020;
+update gpsSeasonConstructors set mainColor = "#FAFAFA", secondaryColor = "#000000" where constructorRef = "haas" and year = 2020;
 update gpsSeasonConstructors set mainColor = "#FCA13B", secondaryColor = "#0D1D20" where constructorRef = "mclaren" and year = 2020;
-update gpsSeasonConstructors set mainColor = "#18A19B", secondaryColor = "#D7D7D5" where constructorRef = "mercedes" and year = 2020;
+update gpsSeasonConstructors set mainColor = "#22CEBB", secondaryColor = "#0a0a0a" where constructorRef = "mercedes" and year = 2020;
 update gpsSeasonConstructors set mainColor = "#F6AFC1", secondaryColor = "#283777" where constructorRef = "racing_point" and year = 2020;
-update gpsSeasonConstructors set mainColor = "#021F48", secondaryColor = "#FDCC2F" where constructorRef = "red_bull" and year = 2020;
+update gpsSeasonConstructors set mainColor = "#0F20E6", secondaryColor = "#FDCC2F" where constructorRef = "red_bull" and year = 2020;
 update gpsSeasonConstructors set mainColor = "#FEF336", secondaryColor = "#000000" where constructorRef = "renault" and year = 2020;
 update gpsSeasonConstructors set mainColor = "#1AA1DB", secondaryColor = "#EAE4ED" where constructorRef = "williams" and year = 2020;
 
+# 2021
+
+update gpsSeasonConstructors set mainColor = "#8C050B", secondaryColor = "#FFFFFF" where constructorRef = "alfa" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#2B4460", secondaryColor = "#FFFFFF" where constructorRef = "alphatauri" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#1991F7", secondaryColor = "#000000" where constructorRef = "alpine" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#0D6C60", secondaryColor = "#B49663" where constructorRef = "aston_martin" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#D50A16", secondaryColor = "#000000" where constructorRef = "ferrari" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#FAFAFA", secondaryColor = "#000000" where constructorRef = "haas" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#FCA13B", secondaryColor = "#0D1D20" where constructorRef = "mclaren" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#22CEBB", secondaryColor = "#0a0a0a" where constructorRef = "mercedes" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#0F20E6", secondaryColor = "#FDCC2F" where constructorRef = "red_bull" and year = 2021;
+update gpsSeasonConstructors set mainColor = "#115EF5", secondaryColor = "#EAE4ED" where constructorRef = "williams" and year = 2021;
