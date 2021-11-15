@@ -104,7 +104,9 @@ values
     ('New Zealand',    'new_zealand',    'nz', '🇳🇿'),
     ('Poland',         'poland',         'pl', '🇵🇱'),
     ('Portugal',       'portugal',       'pt', '🇵🇹'),
+    ('Qatar',          'qatar',          'qa', '🇶🇦'),
     ('Russia',         'russia',         'ru', '🇷🇺'),
+    ('Saudi Arabia',   'saudi_arabia',   'sa', '🇸🇦'),
     ('Singapore',      'singapore',      'sg', '🇸🇬'),
     ('South Africa',   'south_africa',   'za', '🇿🇦'),
     ('Spain',          'spain',          'es', '🇪🇸'),
@@ -117,4 +119,5 @@ values
     ('UK',             'uk',             'gb', '🇬🇧'),
     ('Uruguay',        'uruguay',        'uy', '🇺🇾'),
     ('USA',            'usa',            'us', '🇺🇸'),
-    ('Venezuela',      'venezuela',      've', '🇻🇪');
+    ('Venezuela',      'venezuela',      've', '🇻🇪'),
+    ('Vietnam',        'vietnam',        'vn', '🇻🇳');
