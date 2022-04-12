@@ -50,6 +50,20 @@ end$$
 delimiter ;
 
 -- ----------------------------------------------------------------
+-- gpsDriverCodeFlag
+-- ----------------------------------------------------------------
+drop function if exists gpsDriverCodeFlag;
+
+delimiter $$
+create function gpsDriverCodeFlag(driverRef varchar(255))
+returns varchar(255)
+deterministic
+begin
+    return (select concat(code, ' ', countryFlag) from gpsDrivers d where d.driverRef = driverRef);
+end$$
+delimiter ;
+
+-- ----------------------------------------------------------------
 -- gpsConstructorFlag
 -- ----------------------------------------------------------------
 drop function if exists gpsConstructorFlag;

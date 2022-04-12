@@ -21,3 +21,6 @@ migrate:
 
 dump:
 	mysqldump -u root f1stats > db/f1stats.sql
+
+convert:
+	scripts/convertdb.sh
