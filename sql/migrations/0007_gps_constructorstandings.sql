@@ -1,18 +1,24 @@
 -- ----------------------------------------------------------------
 -- gpsConstructorStandings
+-- This table stores one entry per constructor per race (season + year)
 -- ----------------------------------------------------------------
 drop table if exists gpsConstructorStandings;
 
 create table gpsConstructorStandings as
-select c.constructorRef, cs.*, r.year, r.round, r.date
-  from constructorStandings cs, races r, gpsSeasons sr, constructors c
- where cs.raceId = r.raceId and r.year = sr.year and r.round = sr.rounds
-   and cs.constructorId = c.constructorId;
+select c.constructorId, c.constructorRef, r.raceId, r.year, r.round, r.date,
+       co.name as country, co.flag as countryFlag, co.code as countryCode,
+       cs.points, cs.position, cs.positionText, cs.wins
+  from constructorStandings cs
+  join races r on cs.raceId = r.raceId
+  join gpsSeasons sr on r.year = sr.year
+  join constructors c on cs.constructorId = c.constructorId
+  join gpsNationalities na on c.nationality = na.name
+  join gpsCountries co on na.code = co.code;
 
-alter table gpsConstructorStandings add primary key (constructorStandingsId);
-alter table gpsConstructorStandings add unique index (constructorId, year);
-alter table gpsConstructorStandings add unique index (constructorRef, year);
+alter table gpsConstructorStandings add primary key (constructorId, year, round);
+alter table gpsConstructorStandings add unique index constructorRefYear (constructorRef, year, round);
 alter table gpsConstructorStandings add index (constructorId);
 alter table gpsConstructorStandings add index (constructorRef);
 alter table gpsConstructorStandings add index (position);
+alter table gpsConstructorStandings add unique index constructorRaceYear (constructorId, raceId);
 alter table gpsConstructorStandings add index (constructorId, position);

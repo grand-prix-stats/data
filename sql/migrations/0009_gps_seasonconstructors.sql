@@ -1,5 +1,6 @@
 -- ----------------------------------------------------------------
 -- gpsSeasonConstructors
+-- This table stores one entry per constructor per year
 -- ----------------------------------------------------------------
 drop table if exists gpsSeasonConstructors;
 
@@ -30,10 +31,10 @@ select c.constructorId, c.constructorRef, s.year, c.name,
        (select max(r.date) from gpsRaceResults r where r.constructorId = c.constructorId and year = s.year) as lastRace,
        (select min(r.date) from gpsRaceResults r where r.constructorId = c.constructorId and year = s.year and position = 1) as firstWin,
        (select max(r.date) from gpsRaceResults r where r.constructorId = c.constructorId and year = s.year and position = 1) as lastWin,
-       (select position from gpsConstructorStandings ds where ds.constructorId = c.constructorId and year = s.year) as standingsPosition,
-       (select count(1) from gpsConstructorStandings ds where ds.constructorId = c.constructorId and position = 1 and year = s.year) as championships,
-       (select count(1) from gpsConstructorStandings ds where ds.constructorId = c.constructorId and position = 2 and year = s.year) as subChampionships
-  from seasons s
+       (select position from gpsConstructorStandings ds where ds.constructorId = c.constructorId and year = s.year and round = s.rounds) as standingsPosition,
+       (select count(1) from gpsConstructorStandings ds where ds.constructorId = c.constructorId and position = 1 and year = s.year and round = s.rounds) as championships,
+       (select count(1) from gpsConstructorStandings ds where ds.constructorId = c.constructorId and position = 2 and year = s.year and round = s.rounds) as subChampionships
+  from gpsSeasons s
   join constructors c
   join gpsNationalities na on c.nationality = na.name
   join gpsCountries co on na.code = co.code
