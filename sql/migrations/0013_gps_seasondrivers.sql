@@ -7,7 +7,8 @@ drop table if exists gpsSeasonDrivers;
 create table gpsSeasonDrivers as
 select d.driverId, d.driverRef, s.year, d.forename, d.surname,
        d.number as permanentNumber,
-       d.code, d.dob, co.name as country, co.flag as countryFlag, co.code as countryCode,
+       ifnull(d.code, left(upper(d.surname), 3)) as code, 
+       d.dob, co.name as country, co.flag as countryFlag, co.code as countryCode,
        (select count(1) from gpsRaceResults r where r.driverId = d.driverId and year = s.year and position = 1) as wins,
        (select count(1) from gpsRaceResults r where r.driverId = d.driverId and year = s.year and position in (1,2,3)) as podiums,
        (select count(1) from gpsRaceResults r where r.driverId = d.driverId and year = s.year and position between 1 and 10) as topTen,
