@@ -160,7 +160,7 @@ update gpsSeasonConstructors set mainColor = "#22CEBB", secondaryColor = "#0a0a0
 update gpsSeasonConstructors set mainColor = "#0F20E6", secondaryColor = "#FDCC2F" where constructorRef = "red_bull" and year = 2021;
 update gpsSeasonConstructors set mainColor = "#115EF5", secondaryColor = "#EAE4ED" where constructorRef = "williams" and year = 2021;
 
-# 2021
+# 2022
 
 update gpsSeasonConstructors set mainColor = "#AF233C", secondaryColor = "#FFFFFF" where constructorRef = "alfa" and year = 2022;
 update gpsSeasonConstructors set mainColor = "#507C9A", secondaryColor = "#FFFFFF" where constructorRef = "alphatauri" and year = 2022;
