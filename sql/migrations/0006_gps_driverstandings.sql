@@ -5,11 +5,11 @@
 drop table if exists gpsDriverStandings;
 
 create table gpsDriverStandings as
-select d.driverId, d.driverRef, r.raceId, r.year, r.round, r.date,
+select d.driverId, d.driverRef, r.raceId, r.raceRef, r.year, r.round, r.date,
        co.name as country, co.flag as countryFlag, co.code as countryCode,
        ds.points, ds.position, ds.positionText, ds.wins       
   from driverStandings ds
-  join races r on ds.raceId = r.raceId
+  join gpsRaces r on ds.raceId = r.raceId
   join gpsSeasons sr on r.year = sr.year
   join drivers d on ds.driverId = d.driverId
   join gpsNationalities na on d.nationality = na.name

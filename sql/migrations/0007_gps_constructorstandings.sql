@@ -5,11 +5,11 @@
 drop table if exists gpsConstructorStandings;
 
 create table gpsConstructorStandings as
-select c.constructorId, c.constructorRef, r.raceId, r.year, r.round, r.date,
+select c.constructorId, c.constructorRef, r.raceId, r.raceRef, r.year, r.round, r.date,
        co.name as country, co.flag as countryFlag, co.code as countryCode,
        cs.points, cs.position, cs.positionText, cs.wins
   from constructorStandings cs
-  join races r on cs.raceId = r.raceId
+  join gpsRaces r on cs.raceId = r.raceId
   join gpsSeasons sr on r.year = sr.year
   join constructors c on cs.constructorId = c.constructorId
   join gpsNationalities na on c.nationality = na.name
