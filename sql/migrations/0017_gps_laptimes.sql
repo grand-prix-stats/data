@@ -18,6 +18,7 @@ alter table gpsLapTimes add index (driverId);
 alter table gpsLapTimes add index (driverRef);
 alter table gpsLapTimes add index (lap);
 alter table gpsLapTimes add index lapPosition (raceId, lap, position);
+alter table gpsLapTimes add index driverLaps (raceId, driverRef);
 
 alter table gpsLapTimes add column accruedMilliseconds int;
 alter table gpsLapTimes add column lapLeaderDriverId int;
@@ -32,6 +33,8 @@ alter table gpsLapTimes add column averageLapMilliseconds int;
 -- alter table gpsLapTimes add column averageLapAccruedMilliseconds int;
 alter table gpsLapTimes add column millisecondsFromAverageLap int;
 -- alter table gpsLapTimes add column accruedMillisecondsFromAverageLap int;
+alter table gpsLapTimes add column raceAverageLapMilliseconds int;
+alter table gpsLapTimes add column raceAverageRatio double;
 
 
 update gpsLapTimes l
@@ -41,7 +44,11 @@ update gpsLapTimes l
        l.raceWinnerDriverId = (select winningDriverId from gpsRaces where raceId = l.raceId),
        l.averageLapMilliseconds = (select round(avg(milliseconds)) from lapTimes where raceId = l.raceId and lap = l.lap),
        l.millisecondsFromAverageLap = l.averageLapMilliseconds - l.milliseconds;
-       
+
+update gpsLapTimes l
+   set l.raceAverageLapMilliseconds = (select round(avg(milliseconds)) from lapTimes where raceId = l.raceId and driverId = l.driverId),
+       l.raceAverageRatio = l.averageLapMilliseconds / l.raceAverageLapMilliseconds;
+
 -- update gpsLapTimes l
 --    set ;
        -- l.averageLapAccruedMilliseconds = (select sum(averageLapMilliseconds) from gpsLapTimes where raceId = l.raceId and driverId = l.driverId and lap <= l.lap),

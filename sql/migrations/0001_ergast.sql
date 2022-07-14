@@ -33,7 +33,9 @@ alter table lapTimes add index (lap);
 alter table lapTimes add index (milliseconds);
 alter table lapTimes add index (position);
 alter table lapTimes add index raceIdmillis (raceId, milliseconds);
+alter table lapTimes add index driverId (driverId);
 alter table lapTimes add index driverLap (raceId, driverId, lap);
+alter table lapTimes add index driverLaps (raceId, driverId);
 alter table lapTimes add index lapPosition (raceId, lap, position);
 
 -- Pit Stops
