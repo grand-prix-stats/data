@@ -29,8 +29,10 @@ https://livetiming.formula1.com/static/2022/2022-06-19_Canadian_Grand_Prix/2022-
 
 https://livetiming.formula1.com/static/2022/2022-07-03_British_Grand_Prix/2022-07-03_Race/DriverList.jsonStream
 
+## Sessions
 https://livetiming.formula1.com/static/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/DriverList.jsonStream
-https://livetiming.formula1.com/static/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Sprint/DriverList.jsonStream
+https://livetiming.formula1.com/static/2022/2022-07-10_Austrian_Grand_Prix/2022-07-09_Sprint/DriverList.jsonStream
+https://livetiming.formula1.com/static/2022/2022-07-24_French_Grand_Prix/2022-07-22_Practice_2/DriverList.jsonStream
 
 
 ## Session Details
@@ -38,7 +40,12 @@ https://livetiming.formula1.com/static/2022/2022-07-10_Austrian_Grand_Prix/2022-
 
 ## Current Session
 https://livetiming.formula1.com/static/StreamingStatus.json
+{"Status":"Available"}
+
 https://livetiming.formula1.com/static/SessionInfo.json
+
+{"Meeting":{"Key":1116,"Name":"French Grand Prix","OfficialName":"FORMULA 1 LENOVO GRAND PRIX DE FRANCE 2022","Location":"Le Castellet","Country":{"Key":7,"Code":"FRA","Name":"France"},"Circuit":{"Key":28,"ShortName":"Paul Ricard"}},"ArchiveStatus":{"Status":"Complete"},"Key":7146,"Type":"Practice","Number":2,"Name":"Practice 2","StartDate":"2022-07-22T17:00:00","EndDate":"2022-07-22T18:00:00","GmtOffset":"02:00:00","Path":"2022/2022-07-24_French_Grand_Prix/2022-07-22_Practice_2/"}
 
 # Circuit Map Images
 https://www.formula1.com/etc/designs/fom-website/images/LT/img/circuit-maps/Spielberg.png
+
