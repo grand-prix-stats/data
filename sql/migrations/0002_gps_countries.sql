@@ -126,3 +126,9 @@ values
     ('USA',            'usa',            'us', '🇺🇸'),
     ('Venezuela',      'venezuela',      've', '🇻🇪'),
     ('Vietnam',        'vietnam',        'vn', '🇻🇳');
+
+
+-- Country hashtags
+
+alter table gpsCountries add column countryTag varchar(128);
+update gpsCountries set countryTag = concat('#', replace(name, ' ', ''), 'GP');
