@@ -523,3 +523,5 @@ select r.round, r.name as raceName, r.country as raceCountry, r.countryFlag as r
    and sd.driverRef = 'hulkenberg';
 
 
+select round, countryFlag, countryTag, raceTag from gpsRaces where year = 2022;
+select * from gpsCircuits;
