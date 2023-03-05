@@ -15,6 +15,9 @@ alter table driverStandings add index (raceId);
 delete from driverStandings where driverStandingsId in (70225);
 alter table driverStandings add unique index driverRace (driverId, raceId);
 
+-- Circuits
+update circuits set country = 'USA' where country = 'United States';
+
 -- Races
 alter table races modify column `date` DATE not null default '1900-01-01';
 alter table races add unique index yearRound (year, round);
@@ -44,3 +47,4 @@ alter table pitstops add index (lap);
 -- Qualifying
 alter table qualifying add index (raceId);
 alter table qualifying add index (position);
+
