@@ -7,9 +7,23 @@ download:
 	gunzip -k -f f1db.sql.gz
 	mv f1db.sql.gz db/ergast-f1db.sql.gz
 
+USER = $(shell whoami)
+
+startdb_once:
+	mysql.server start
+
+startdb:
+	brew services start mysql
+
+stopdb:
+	brew services stop mysql
+
 resetdb:
 	@echo "Resetting MySQL f1stats database..."
-	mysql < sql/setupdb.sql
+	mysql -u root < sql/setupdb.sql
+	mysql -u root -e "CREATE USER '$(USER)'@'localhost' "
+	mysql -u root -e "GRANT ALL PRIVILEGES ON f1stats.* TO '$(USER)'@'localhost'"
+	mysql -u root -e "GRANT SUPER ON *.* TO '$(USER)'@'localhost'"
 
 import:
 	echo "Importing Ergast F1 DB..."
